@@ -1,0 +1,25 @@
+<!Doctype html>
+
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>HashKart Application</title>
+</head>
+
+<header th:replace="layout :: logged-out">
+
+</header>
+
+<body>
+<h1>All HashKart Items</h1>
+<main id="items">
+    <post th:each="i : ${items}">
+        <h2 th:text="${i.title}"></h2>
+        <i>Posted On: </i> <span th:text="${i.date}"></span>
+        <div>
+            <p th:text="${i.body}"></p>
+        </div>
+    </post>
+</main>
+</body>
+</html>
